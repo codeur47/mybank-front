@@ -5,19 +5,22 @@
       <div class="auth-box">
         <div class="card">
           <div class="header">
-            <p class="lead">Connectez-vous à un compte</p>
+            <p data-cy="sg-title" class="lead">Connectez-vous à un compte</p>
           </div>
           <div class="body">
             <form class="form">
               <div class="form-group">
-                  <input type="text" class="form-control" name="username" placeholder="Nom utilisateur">
+                  <input type="text" class="form-control" name="username" placeholder="Nom utilisateur" data-cy="sg-input-username">
               </div>
               <div class="form-group">
-                  <input type="password" class="form-control" name="password" placeholder="Mot de passe">
+                  <input type="password" class="form-control" name="password" placeholder="Mot de passe" data-cy="sg-input-password">
               </div>
-              <button type="submit" class="btn btn-primary btn-lg btn-block">Connexion</button>
+              <button type="submit" class="btn btn-primary btn-lg btn-block" data-cy="sg-btn-connexion">Connexion</button>
               <div class="bottom" style="margin-top:10px;">
-                <span class="helper-text">Pas de compte ? <a routerLink="/signup">Creer un compte</a></span>
+                <span class="helper-text">
+                  Pas de compte ?
+                  <a routerLink="/signup" data-cy="sg-link-create-account">Creer un compte</a>
+                </span>
               </div>
             </form>
           </div>
