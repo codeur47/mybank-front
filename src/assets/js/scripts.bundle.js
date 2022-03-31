@@ -10031,28 +10031,6 @@ var KTLayoutExamples = function() {
     for (var i = 0; i < elements.length; ++i) {
       var example = elements[i];
       var copy = KTUtil.find(example, '.example-copy');
-
-      var clipboard = new ClipboardJS(copy, {
-        target: function(trigger) {
-          var example = trigger.closest('.example');
-          var el = KTUtil.find(example, '.example-code .tab-pane.active');
-
-          if (!el) {
-            el = KTUtil.find(example, '.example-code');
-          }
-
-          return el;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        KTUtil.addClass(e.trigger, 'example-copied');
-        e.clearSelection();
-
-        setTimeout(function() {
-          KTUtil.removeClass(e.trigger, 'example-copied');
-        }, 2000);
-      });
     }
   }
 
@@ -10087,29 +10065,6 @@ var KTLayoutExamples = function() {
             KTUtil.show(code);
           });
         }
-      });
-
-      // Handle copy
-      var clipboard = new ClipboardJS(copy, {
-        target: function(trigger) {
-          var example = trigger.closest('.example');
-          var el = KTUtil.find(example, '.example-code .tab-pane.active');
-
-          if (!el) {
-            el = KTUtil.find(example, '.example-code');
-          }
-
-          return el;
-        }
-      });
-
-      clipboard.on('success', function(e) {
-        KTUtil.addClass(e.trigger, 'example-copied');
-        e.clearSelection();
-
-        setTimeout(function() {
-          KTUtil.removeClass(e.trigger, 'example-copied');
-        }, 2000);
       });
     }
   }
